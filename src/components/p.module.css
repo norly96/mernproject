@@ -1,0 +1,27 @@
+.container {
+    height: 100vh;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    background-image: url('./../assets/pr.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header {
+    width: 100vw;
+    height: 5vh;
+    background-color: blue;
+    
+}
+.content {
+    display: flex;
+    height: 90vh;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+section {
+    width: 400px;
+    height: 400px;
+    background-color: sienna;
+}
