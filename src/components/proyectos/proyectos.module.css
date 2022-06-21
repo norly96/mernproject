@@ -4,19 +4,9 @@
     flex-direction: column;
     /* justify-content: center;
     align-items: center; */
-    background-image: url('./../assets/pr.svg');
+    background-image: url('../../assets/pr.svg');
     background-repeat: no-repeat;
     background-size: cover;
-}
-.header {
-    width: 100vw;
-    height: 64px;
-    background-color: white;
-    
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid black;
-    align-items: center;
 }
 h1 {
   margin-left: 2rem;

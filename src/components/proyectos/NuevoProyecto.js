@@ -2,43 +2,9 @@ import React, {useState, useContext} from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import style from './proyectos.module.css'
 import Logo from "../../assets/logo.png";
 import proyectoContext from '../../context/proyectos/proyectoContext';
-
-const useStyles = makeStyles((theme) => ({
-    /* root: {
-      height: '100vh',
-    }, */
-    paper: {
-      margin: theme.spacing(8, 4),
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-    },
-    logo: {
-      width: '50%',
-      margin: theme.spacing(3),
-    },
-    form: {
-      width: '80%', // Fix IE 11 issue.
-      marginTop: theme.spacing(4),
-    },
-    submit: {
-      //margin: theme.spacing(3, 0, 2),
-      marginTop: theme.spacing(1),
-      
-    },
-    color: {
-      backgroundColor: theme.palette.error.main,
-      color: 'white',
-      display: 'flex',
-      justifyContent: 'center',
-      margin: theme.spacing(1,0,0),
-    }
-  }));
-  
-   
 
 const NuevoProyecto = () => {
     //Obtener el state del formulario
@@ -85,18 +51,18 @@ const NuevoProyecto = () => {
       mostrarFormulario();
     }
 
-    const classes = useStyles();
+    
     return (
     
-        <div className={classes.paper}>
-        <img src={Logo} className={classes.logo} alt="logo" />
-          <Button onClick={onClickForm} variant="contained" color="primary">Nuevo Proyecto</Button>
+        <div className={style.aside}>
+        <img src={Logo} className={style.logo} alt="logo" />
+          <button onClick={onClickForm}>Nuevo Proyecto</button>
 
           {
             formulario
             ?
             (
-              <form className={classes.form} noValidate onSubmit={onSubmitProyecto}>
+              <form noValidate onSubmit={onSubmitProyecto}>
             <TextField
               variant="outlined"
               margin="normal"
@@ -109,13 +75,13 @@ const NuevoProyecto = () => {
               value={nombre}
               
             />
-            <Button fullWidth  type="submit" variant="contained" color="primary" className={classes.submit}>Agregar Proyecto</Button>
+            <button fullWidth type="submit" >Agregar Proyecto</button>
           </form>
             )
             : null
           }
           
-          { errorformulario ? <Typography variant="subtitle2" className={classes.color} ><strong>El Nombre del Proyecto es Obligatorio</strong></Typography> : null}
+          { errorformulario ? <Typography variant="subtitle2" ><strong>El Nombre del Proyecto es Obligatorio</strong></Typography> : null}
           
         </div>
     

@@ -14,6 +14,12 @@ code {
 
 /* @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap'); */
 
+/* * {
+  padding: 0;
+  margin: 0;
+}
+ */
+
 .proyecto-enter{
   opacity: 0;
 }

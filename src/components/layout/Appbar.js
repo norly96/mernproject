@@ -1,25 +1,6 @@
 import React, {useContext, useEffect} from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
-import { Typography } from '@material-ui/core';
 import AuthContext from '../../context/auth/authContext';
-
-const useStyles = makeStyles((theme) => ({
-  vet: {
-    //backgroundColor: theme.palette.secondary.main,
-    
-  },
-  logo: {
-    width: "10%",
-    marginRight: theme.spacing(9),
-  },
-  bar:{
-    flexGrow: 1,
-  },
-  
-}));
+import style from './appbar.module.css'
 
  const Appbar = () => {
 
@@ -29,13 +10,19 @@ const useStyles = makeStyles((theme) => ({
 
   useEffect(() => {
     usuarioAutenticado();
-    
   }, []);
 
-  const classes = useStyles();
-
   return (
-<>
+    <header className={style.header}>
+      {usuario ? <h1>Hola <span>{usuario.nombre}</span></h1> : null}
+      <button onClick={()=> cerrarSesion()}>Cerrar Sesion</button>
+    </header>      
+  )
+}
+
+export default Appbar;
+
+{/* <>
     <AppBar color="primary" position="relative" elevation={2}>
       <Toolbar sx={{ height: 64 }}>
         {usuario ? <Typography variant="h6" className={classes.bar}> Hola <span>{usuario.nombre}</span> </Typography> : null }
@@ -43,9 +30,4 @@ const useStyles = makeStyles((theme) => ({
       </Toolbar>
   </AppBar>
   
-  </>
-      
-  )
-}
-
-export default Appbar;
+  </> */}
